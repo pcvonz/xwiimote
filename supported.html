@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>XWiimote - Open-Source Nintendo Wii / Wii U Device Driver</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div id = nav_1>
+            <img src="images/xwiimote.svg"/>
+        </div>
+        <div id=nav_2>
+                <ul>
+                    <li><a href="howto.html">How To Use</a></li>
+                    <li id ="selected"><a href="supported.html">
+    Supported Devices</a></li>
+                <li><a href="developing.html"> Developing Applications
+    </a></li>
+                    <li><a href="Contact.html"> Contact</a></li>
+                </ul>
+        </div>
+    </header>
+       
+    <div id="content">
+         <p>
+        Nintendo produced many different devices for the Wii and Wii U consoles
+        and 3rd party companies continously produce new devices based on them.
+        The <strong>XWiimote</strong> project tries to support all of the
+        Bluetooth-based HID input devices, which currently includes:
+        <ul>
+          <li>Nintendo Wii Remote (Nintendo RVL-CNT-01)</li>
+          <li>Nintendo Wii Remote Plus (Nintendo RVL-CNT-01-TR)</li>
+          <li>Nintendo Wii Nunchuk Extension</li>
+          <li>Nintendo Wii Classic Controller Extension</li>
+          <li>Nintendo Wii Classic Controller Pro Extension</li>
+          <li>Nintendo Wii Balance Board (Nintendo RVL-WBC-01)</li>
+          <li>Nintendo Wii U Pro Controller (Nintendo RVL-CNT-01-UC)</li>
+          <li>Nintendo Wii Guitar Extensions</li>
+          <li>Nintendo Wii Drums Extensions</li>
+        </ul>
+      </p>
+      <p>
+        Note that compatible 3rd-party devices are also supported. If you
+        own a device that does not work, please let us know! We do our best
+        to support all devices that are internally based on the Wii Remote.
+      </p>
+      <p>
+        The <strong>Nintendo Wii U GamePad</strong> is not based on Bluetooth,
+        but rather on <em>IEEE-802.11 wifi</em> and, thus, is not supported by
+        <em>XWiimote</em>. However, there is ongoing work to reverse-engineer
+        the device and we will try to provide a new driver for it when enough
+        information is known. Contributions are highly welcome!
+      </p>
+    </div>
+
+    <div id="footer">
+        <a href=https://github.com/dvdhrm/xwiimote><img
+src="images/GitHub-Mark-32px.png"/> </a>
+    </div>
+
+</body>
+
+</html>

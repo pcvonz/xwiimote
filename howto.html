@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>XWiimote - Open-Source Nintendo Wii / Wii U Device Driver</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div id = nav_1>
+            <a href="index.html"> <img src="images/xwiimote.svg"/> </a>
+        </div>
+        <div id=nav_2>
+                <ul>
+                    <li id ="selected"><a href="howto.html">How To Use</a></li>
+                    <li><a href="supported.html">
+    Supported Devices</a></li>
+                <li><a href="developing.html"> Developing Applications
+    </a></li>
+                    <li><a href="Contact.html"> Contact</a></li>
+                </ul>
+        </div>
+    </header>
+       
+    <div id="content">
+        <h1> How to use it?</h1>
+        <p>
+             To use Nintendo Wii Remotes, or any
+        <a href="#devices">compatible device</a>, on linux, you need:
+        <ul>
+          <li><strong>linux kernel</strong> 3.1 or newer (<strong>3.11</strong>
+              or newer recommended)</li>
+          <li><strong>bluez</strong>-4.101 or newer (<strong>bluez-5.0</strong>
+              or newer recommended)</li>
+        </ul>
+      </p>
+      <p>
+        The <em>kernel drive</em>r is available since linux-3.1 upstream.
+        However, you need at least <em>linux-3.11</em>
+        for a hotplug-capable driver and proper device
+        support. Older versions of the kernel driver are no longer recommended
+        (still supported, but may lack important features). Most major
+        distributions provide toose kernels out-of-the-box with the
+        <strong>hid-wiimote</strong>
+        driver enabled. But you might have to call
+        <code>modprobe hid-wiimote</code>
+        to load the driver manually.
+        <br />
+        The <em>bluez bluetooth stack</em> is the official linux bluetooth
+        stack which
+        is provided by all major distributions. Since <em>version 4.101</em>
+        it includes
+        fixes so Nintendo devices can be paired with linux hosts. If you use
+        an older bluez version, you may still be able to use Nintendo
+        Wii / Wii U devices, but you cannot pair them.
+      </p>
+      <p>
+        Once you made sure you have the required software installed, you can
+        start a bluetooth-manager of your choice (eg.,
+        <a href="https://launchpad.net/blueman">blueman</a>,
+        <a href="https://live.gnome.org/GnomeBluetooth">gnome-bluetooth</a>)
+        and perform a bluetooth inquiry (ie., search for nearby devices). Your
+        remotes will show up as <strong>Nintendo RVL-CNT-01</strong>
+        (<em>Revolution</em> was the codename of the Nintendo Wii) or with
+        slightly modified names (eg., the balance board shows up as
+        <strong>Nintendo RVL-WBC-01</strong>). Select a device and connect to
+        it. If you use a new enough bluez version, it will automatically select
+        the
+        correct PIN. If you are prompted for PIN input, your bluez stack is too
+        old. In this case simply select <em>"Connect without PIN"</em> or
+        <em>"Connect without Pairing"</em> as you cannot enter the required PIN
+        via these interfaces.
+      </p>
+      <p>
+        If you connected a device, the <em>hid-wiimote</em> kernel driver
+        will pick it up and provide kernel input interfaces for it. As these
+        interfaces are pretty useless on its own, you need a user-space
+        application or driver that uses the device. The kernel interfaces
+        provide the parsed data input (eg., accelerometer data, IR cam
+        positioning information, ...) but do not apply any policy. So if you
+        want to use your device to emulate mouse-input, you need a user-space
+        driver which does exactly that. There is no sane generic way how X11
+        or other applications could use this data, as it is very device
+        specific.
+        <br />
+        The <strong>xwiimote tools</strong> provide a library and some
+        programs
+        to help application-developers use Nintendo Wii / Wii U remotes.
+        It is highly recommended to install the
+        <a href="http://github.com/dvdhrm/xwiimote">xwiimote-package</a>
+        before using a device. It will install some X11 blacklists so your
+        X-Server will not pick up those devices by default. It also provides
+        a tool called <strong>xwiishow</strong>, which can be used for testing.
+      </p>
+      <p>
+        From this point on, there are several ways to use the device:
+        <ul>
+          <li>Use <a href="#xwiishow">xwiishow</a> for testing</li>
+          <li>Install <a href="#x11">xf86-input-xwiimote</a> to make X11 use
+              the device as input device</li>
+          <li>Use the device with an application that supports
+              <em>xwiimote</em></li>
+        </ul>
+      </p>
+        </p>
+             <h3 id="xwiishow">xwiishow</h3>
+      <p>
+        Once you followed the instructions given above, you can use the
+        <em>xwiishow</em> command-line program from the
+        <em>xwiimote tools</em> project. Simply install the
+        <a href="http://github.com/dvdhrm/xwiimote">xwiimote-package</a>
+        and run <code>xwiishow list</code>. This will list all currently
+        connected devices. Via <code>xwiishow &lt;num&gt;</code> you can open
+        a device and see a visualization of all input events. Several hotkeys
+        are available to control the device.
+      </p>
+      <p>
+        A manpage <em>xwiishow(1)</em> is also provided which explains all
+        hotkeys and command-line arguments.
+      </p>
+<!--       <h3 id="x11">X11 Input Driver</h3> -->
+      <p>
+        The <strong>xf86-input-xwiimote</strong> project provides an X11
+        input driver so a Nintendo Wii / Wii U device can be used as X11
+        input device. The project is still under development, but currently
+        supports emulating arbitrary button and keyboard input and emulating
+        a mouse with the accelerometer and Motion-Plus gyroscope. Install the
+        <a
+href="http://github.com/dvdhrm/xf86-input-xwiimote">xf86-input-xwiimote</a>
+        package and give it a try!
+      </p>
+    </div>
+    
+    <div id="footer">
+        <a href=https://github.com/dvdhrm/xwiimote><img
+src="images/GitHub-Mark-32px.png"/> </a>
+    </div>
+
+</body>
+
+</html>
