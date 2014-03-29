@@ -45,7 +45,9 @@ header {
 #content {
     margin: 1% 11% 0%;
     background-color: rgb(249, 249, 249);
-    padding:1%;
+    padding-left:7%;
+    padding-right:7%;
+    padding-top:2%;
     
 }
 #content p {
