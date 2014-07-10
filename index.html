@@ -1,52 +1,88 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
-    <meta charset="utf-8">
-    <title>XWiimote - Open-Source Nintendo Wii / Wii U Device Driver</title>
-    <link href="style.css" rel="stylesheet">
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Xwiimote</title>
+	<meta name="description" content="">
+	<meta name="author" content="Paul Von Zimmerman" >
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="stylesheets/base.css">
+	<link rel="stylesheet" href="stylesheets/skeleton.css">
+	<link rel="stylesheet" href="stylesheets/layout.css">
+	<link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
 </head>
 
 <body>
-    <header>
-        <a href=index.html><img src="images/xwiimote.png"/><a>
-    </header>
-    <div id="navbar">
-        <ul>
-            <li><a href="howto.html"> How to </a></li>
-            <li><a href="supported.html"> Supported Devices</a></li>
-            <li><a href="developing.html">Develop</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        <ul>
 
-    </div>
-    </header>
-       
-    <div id="content">
-        <p>
-        XWiimote is an open-source linux device driver for Nintendo Wii / Wii U
-        Remotes and
-        <a href="supported.html">compatible devices</a>. It is a relatively new
-driver
-        that tries to supercede
-        <a href="http://abstrakraft.org/cwiid/">cwiid</a>,
-        <a href="http://wiibrew.org/wiki/Wiiuse">wiiuse</a> and others by
-        integrating the driver into existing linux infrastructure. The project
-        consists of an official linux
-        <a
-href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/
-drivers/hid/hid-wiimote-core.c">kernel driver</a>,
-        which is part of the kernel
-        since linux-3.1, an extension to
-        <a href="http://www.bluez.org">bluez</a>, the official linux bluetooth
-        stack, an X11 input driver, some user-space helpers and test
-        applications.
-      </p>
-    </div>
+    <div class="container">
+        <div class="sixteen collumns">
+            <div id="headerImage">
+                <a href=index.html><img src="images/xwiimote.png"/><a>
+            </div>
+        <div class="three columns">
+            <div class="nav">
+                <ul>
+                    <li><a href="howto.html"> <h3>How to </h3></a></li>
+                    <li><a href="supported.html"> <h3>Supported Devices</h3></a></li>
+                    <li><a href="developing.html"><h3>Develop</h3></a></li>
+                    <li><a href="contact.html"><h3>Contact</h3></a></li>
+                <ul>
+            </div>
+        </div>
+        </header>
+        
+        <div class="thirteen columns">
+            <p>
+            XWiimote is an open-source linux device driver for Nintendo Wii / Wii U
+            Remotes and
+            <a href="supported.html">compatible devices</a>. It is a relatively new
+    driver
+            that tries to supercede
+            <a href="http://abstrakraft.org/cwiid/">cwiid</a>,
+            <a href="http://wiibrew.org/wiki/Wiiuse">wiiuse</a> and others by
+            integrating the driver into existing linux infrastructure. The project
+            consists of an official linux
+            <a
+    href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/
+    drivers/hid/hid-wiimote-core.c">kernel driver</a>,
+            which is part of the kernel
+            since linux-3.1, an extension to
+            <a href="http://www.bluez.org">bluez</a>, the official linux bluetooth
+            stack, an X11 input driver, some user-space helpers and test
+            applications.
+        </p>
+        </div>
 
-    <div id="footer">
-        <a href=https://github.com/dvdhrm/xwiimote><img
-src="images/GitHub-Mark-32px.png"/> </a>
-    </div>
+        <div id="footer">
+            <a href=https://github.com/dvdhrm/xwiimote><img
+    src="images/GitHub-Mark-32px.png"/> </a>
+        </div>
+        </div>
+    </div><!-- cointainer -->
 
 </body>
 
